@@ -1,5 +1,5 @@
-def boxed_text( *args, BUFFER_SPACE=5 ): #v1
-    '''boxed_text   is a function that pretty-prints its args in a box.
+def boxed_text( *args, BUFFER_SPACE=5 ):
+    """boxed_text   is a function that pretty-prints its args in a box.
 
 Parameters
 -----------
@@ -9,7 +9,7 @@ Parameters
     BUFFER_SPACE: int
         The number of spaces between the longest text and the left/ right borders.
 
-    '''
+    """ #v1
     def unpack_strings( obj):
         if isinstance( obj, str) or not hasattr(obj, '__iter__'):
             return [ str (obj)]
