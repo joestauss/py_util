@@ -1,6 +1,17 @@
+"""This module tests Taggable class mixin.
+
+Some of the base classes' functionality is tested also, to verify that everything works when inheriting from an abstract class.
+"""
+
 import unittest
-import json
-from taggable_mixin import TaggableCollection, TaggableRecord
+from mixins import Taggable, JSONable
+from test_resources import BaseRecord, BaseCollection
+
+class TaggableRecord(Taggable, BaseRecord, JSONable):
+    pass
+
+class TaggableCollection( Taggable, BaseCollection):
+    pass
 
 class Test_TaggableClasses( unittest.TestCase):
     def setUp( self):
@@ -13,8 +24,8 @@ class Test_TaggableClasses( unittest.TestCase):
         self.tr1_alt = TaggableRecord( dd_1, tags=tags_2)
         self.tr2     = TaggableRecord( dd_2, tags=tags_2)
 
-        self.tds1    = TaggableCollection( data={self.tr1, self.tr2})
-        self.tds2    = TaggableCollection( data={self.tr1_alt, self.tr2})
+        self.tds1    = TaggableCollection( {self.tr1, self.tr2})
+        self.tds2    = TaggableCollection( {self.tr1_alt, self.tr2})
 
     def test_TaggableRecord_repr( self):
         self.assertEqual( self.tr1, eval( repr( self.tr1)))
@@ -22,9 +33,6 @@ class Test_TaggableClasses( unittest.TestCase):
     def test_TaggableRecord_eq( self):
         self.assertEqual( self.tr1, self.tr1_alt)
         self.assertTrue(  self.tr1 != self.tr2)
-
-    def test_TaggableRecord_json( self):
-        self.assertEqual( TaggableRecord( json.loads( self.tr1.json)), self.tr1)
 
     def test_TaggableRecord_hash( self):
         self.assertEqual( hash( self.tr1), hash( self.tr1_alt))
@@ -49,19 +57,19 @@ class Test_TaggableClasses( unittest.TestCase):
         temp_tds.add( self.tr2)
         self.assertEqual(temp_tds, self.tds1)
 
-        temp_tds = TaggableCollection( data={TaggableRecord( tags={'A'})})
+        temp_tds = TaggableCollection( {TaggableRecord( tags={'A'})})
         temp_tds.add( TaggableRecord( tags={'B'}))
-        self.assertEqual(TaggableCollection( data={TaggableRecord( tags={'A', 'B'})}).tags, temp_tds.tags)
+        self.assertEqual(TaggableCollection( {TaggableRecord( tags={'A', 'B'})}).tags, temp_tds.tags)
 
     def test_TaggableCollection_tag_all( self):
         self.tds2.tag_all( 'TEST TAG')
         for record in self.tds2.data:
             self.assertTrue( 'TEST TAG' in record.tags)
 
-    def test_TaggableCollection_tags( self):
+    def test_TaggableCollection_all_tags( self):
         self.assertEqual(
-            TaggableCollection( data={TaggableRecord( tags={'A', 'B'})}).tags,
-            TaggableCollection( data={TaggableRecord( tags={'A'}), TaggableRecord({'key':None}, tags={'B'})}).tags
+            TaggableCollection( {TaggableRecord( tags={'A', 'B'})}).all_tags,
+            TaggableCollection( {TaggableRecord( tags={'A'}), TaggableRecord({'key':None}, tags={'B'})}).all_tags
          )
 
 if __name__ == "__main__":
