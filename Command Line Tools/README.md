@@ -1,6 +1,6 @@
 # boxed\_text
 
-__boxed_text__ is a pretty print function that puts its args in a box.
+__boxed_text__ is a pretty print function that puts its args in a box.  Any iterables are unpacked and everything is given its own line.
 
 # cli\_selector( option\_list, mode='single', page_size = 10)
 
