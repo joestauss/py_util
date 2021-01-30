@@ -1,6 +1,6 @@
 # Common Repr
 
-The **\@common\_repr** decorator adds a representation of the typical form "ClassName( args, kwargs)".  It requires that the decorated class have two properties: args (a list) and kwargs (a dict).  Both should consist only of strings.
+The **\@common\_repr** decorator adds a representation of the typical form "ClassName( args, kwargs)".  To work properly, the class should have args (a list) and kwargs (a dict) implemented if either is needed for initialization.  Both should consist of repr strings.
 
 # Function Logger
 
