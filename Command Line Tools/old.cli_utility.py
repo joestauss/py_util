@@ -10,7 +10,7 @@ def select_from_list( input_list):
             + [">>> "] )
         user_input = input( choices_prompt)
 
-        print( f"User wants {user_input}.  This corresponds to the following taglines:")
+        print( f"User wants {user_input}.  This corresponds to the following selection(s):")
         selections = [s.strip() for s in user_input.split(",")]
         for selection in selections:
             try:
@@ -18,7 +18,8 @@ def select_from_list( input_list):
                 print(  "\t" + valid_selections[-1])
             except:
                 print( "\t" + f"{selection} was not a valid choice.")
-        print('There were no valid selections.  Please try again:\n' + explanation_prompt.upper())
+        if not valid_selections:
+            print('There were no valid selections.  Please try again:\n' + explanation_prompt.upper())
     return valid_selections
 
 
@@ -40,6 +41,8 @@ def boxed_text( *args, BUFFER_SPACE=5 ):
             lines = []
             for item in obj:
                 lines = lines + unpack_strings( item)
+            return lines
+
     lines = unpack_strings( args)
 
     MAX_LEN         = max( map( lambda s: len(s), lines))

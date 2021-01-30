@@ -21,7 +21,11 @@ class JSONable( collections.abc.Mapping, collections.abc.Hashable, abc.ABC):
     @property
     def json( self):
         """Return a JSON representation of the object."""
-        return json.dumps( dict( sorted( self.items())))
+        def replace_empty_with_none( item):
+            if not item:
+                return None
+            return item
+        return json.dumps( { k: replace_empty_with_none(v) for k, v in self.items()})
 
     def __hash__(self):
         """Return a hash value based on the JSON representation of the object."""
@@ -94,9 +98,9 @@ class ActionThreadsMixin( Taggable):
         batch_threads    = []
         for tag in self.tags:
             if tag in self.regular_action_tags.keys():
-                regular_threads.append( threading.Thread( target=self.regular_action_tags[ tag]))
+                regular_threads.append( threading.Thread( target=self.regular_action_tags[ tag]( self)))
             if tag in self.batch_action_tags.keys():
-                batch_threads.append( threading.Thread( target=self.batch_action_tags[ tag]))
+                batch_threads.append( threading.Thread( target=self.batch_action_tags[ tag]( self)))
         return regular_threads, batch_threads
 
     def act_on_self( self, VERBOSE=False):
@@ -111,7 +115,7 @@ class ActionThreadsMixin( Taggable):
         if not isinstance( self, collections.abc.Collection):
             raise TypeError("The updatable_records property is only available for collections.")
         for record in self:
-            if isinstance( record, Updatable):
+            if isinstance( record, ActionThreadsMixin):
                 yield record
 
     def act_on_records( self, VERBOSE=False):
@@ -133,7 +137,7 @@ class ActionThreadsMixin( Taggable):
     EXAMPLE_ACTION_TAG = hash( "ACTION TAG - Example.") # a hash to avoid accidental collision
 
     regular_action_tags = {
-        EXAMPLE_ACTION_TAG : sample_method
+        EXAMPLE_ACTION_TAG : example_method
     }
     batch_action_tags = {
     }

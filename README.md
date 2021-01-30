@@ -1,11 +1,19 @@
 # my-python-utilities
 
-This repository contains various general-purpose python tools that I have developed.
+This repository contains various general-purpose python tools that I use.
 
-# Compatibility, Use, and Versioning
 
-In order to be able to refactor however and whenever I want, I will not be enforcing backwards compatibility on any of these utilities.  To use this code in another project, copy what is needed into a "utility.py" module in the other repository.  As better versions of these utilties are developed, I may want to update other projects' "utility.py" modules, so it will be important to know which version of each utility I'm using.  Versioning will be implemented with a short comment (#vN) after each docstring.
+# Folders
 
-# Architecture
+The utilities have been grouped into folders by utility and by software design.  The folders contain a README that describes each class or function in detail.
 
- Each function or class should be in a standalone module (so, for example, the "boxed\_text" function is not in a more-general "print\_utilities" module).  Resources for unit testing include "test_resources.py" and anything named ut.\_.py.
+* __Collection Classes__ contains mixins that add functionality to a collection class.
+* __Command Line Tools__ can help with implementing a text-based interface.
+* __Decorators__ has decorators for classes and functions.
+* __File Management__ tools for working with the file system, download images.
+* __Other__ some thread managers, an odd parser, and SQL.
+
+
+# Versioning
+
+In order to be able to refactor however and whenever I want, I will not be enforcing backwards compatibility on any of these utilities.  The current iteration of each utility will be versioned, as indicated by "#v\_" (where \_ is the version number) right after the docstring.
