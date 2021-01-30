@@ -4,10 +4,11 @@ Some of the base classes' functionality is tested also, to verify that everythin
 """
 
 import unittest
-from mixins import Taggable, JSONable
-from test_resources import BaseRecord, BaseCollection
+from old_mixins import Taggable
+from jsonable_mapping import JSONableMapping
+from base_classes import BaseRecord, BaseCollection
 
-class TaggableRecord(Taggable, BaseRecord, JSONable):
+class TaggableRecord(Taggable, BaseRecord, JSONableMapping):
     pass
 
 class TaggableCollection( Taggable, BaseCollection):

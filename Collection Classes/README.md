@@ -17,3 +17,6 @@ A legacy file that will soon be refactored into some of the empty files.
 # Web Updatable mapping
 
 A mapping that can be updated with information from the web.  Mostly a framework for webscraping data records.
+
+# tests
+Tests pass for base classes, JSON mappings, and the taggable mixin (in old\_mixins.py).

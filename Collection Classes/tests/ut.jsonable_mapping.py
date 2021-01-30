@@ -8,10 +8,10 @@ JSONable Functionality tested
     __hash__
 '''
 import unittest
-from mixins import JSONable
-from test_resources import BaseRecord
+from jsonable_mapping import JSONableMapping
+from base_classes import BaseRecord
 
-class JSONRecord( BaseRecord, JSONable):
+class JSONRecord( BaseRecord, JSONableMapping):
     pass
 
 class Test_JSONClasses( unittest.TestCase):

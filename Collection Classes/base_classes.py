@@ -1,3 +1,6 @@
+import collections
+import collections.abc
+
 class BaseRecord( collections.UserDict):
     """A simple concrete record class for testing mixins.""" #v1
     def __init__( self, *args, **kwargs):
@@ -43,10 +46,7 @@ class BaseCollection( collections.abc.MutableSet):
         return len(self.data)
 
     def add(self, item):
-        if isinstance( item, BaseRecord):
-            self.data.add(item)
-        else:
-            raise ValueError( "Tried to add a non-BaseRecord item to a BaseCollection.")
+        self.data.add(item)
 
     def discard(self, item):
         self.data.pop(item)

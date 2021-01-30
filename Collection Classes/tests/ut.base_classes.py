@@ -16,7 +16,7 @@ BaseCollection Functionality Tested
 
 """
 import unittest
-from test_resources import BaseRecord, BaseCollection
+from base_classes import BaseRecord, BaseCollection
 
 class Test_BaseClasses( unittest.TestCase):
     def setUp( self):
