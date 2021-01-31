@@ -1,6 +1,6 @@
-"""The SQL Utility conisisty of two classes: SQLTable and SQLDataset.
+"""The SQL Utility currently only contains the SQLTable class.
 
-These classes were originally used to facilitate a school project,and are not a
+This class was originally used to facilitate a school project, and is not a
 serious attempt to implement SQL.
 """
 from utility import BaseSequence
