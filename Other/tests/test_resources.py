@@ -1,4 +1,4 @@
-from sql_table import SQLTable
+from sql_utility import SQLTable
 import collections
 
 class TestCases:

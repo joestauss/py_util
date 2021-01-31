@@ -1,15 +1,13 @@
-# boxed\_text
+# Contents
 
-__boxed_text__ is a pretty print function that puts its args in a box.  Any iterables are unpacked and everything is given its own line.
+* __boxed_text__ is a pretty-print function that puts its args in a box.  Any iterables are unpacked and everything is given its own line.
 
-# cli\_selector( option\_list, mode='single', page_size = 10)
+* __cli\_selector__ gets a user's input from among a list of options.  It supports two modes of operation:
+ - _single_ - User selects a single choice.  This is the default mode.
+ - _many_ - User can input several choices separated by a comma.
 
-__cli_selector__ gets a user's input from among a list of options.  It should support three modes of operation:
+*  __MenuLoop__ is a framework for a basic, repeating CLI menu-loop.
 
-* _single_ - User selects a single option.  This is the default mode.
-* _many_ - User can select several options separated by a comma.
-* _paginated_ - Options are presented in pages, which can be navigated between with '<' and '>'.  The *page_size* keyword is only significant in _paginated_ mode.
+# Tests
 
-# MenuLoop
-
- __MenuLoop__ is a framework a "Select one of the following..."-type interface.
+Since these tools are meant to be interactive, they have demonstrations instead of unit-tests.

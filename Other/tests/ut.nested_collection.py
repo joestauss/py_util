@@ -35,9 +35,9 @@ class TestNestedCollection( unittest.TestCase):
                     Yellow
                 }
                 Secondary Colors : {
-                Purple
+                    Purple
                 }
-                Black; Grey; White
+                    Black; Grey; White
                 }
             The Blues
         ''', NestedCollection( groups={'Colors' : ['Yellow', 'Black', 'Purple', 'Red', 'Grey', 'White'],

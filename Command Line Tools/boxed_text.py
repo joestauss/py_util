@@ -1,15 +1,17 @@
 def boxed_text( *args, BUFFER_SPACE=5 ):
-    """boxed_text   is a function that pretty-prints its args in a box.
+    """boxed_text is a function that pretty-prints its args in a box.
 
     Parameters
     -----------
         args
-            Each arg in args will be interpretted as a string, unless it's a non-string iterable, in which case it will be unpacked.
+            Each arg in args will be interpretted as a string.
+            Non-string iterables will be unpacked.
 
         BUFFER_SPACE: int
-            The number of spaces between the longest text line and the left/ right borders.
+            Number of spaces surrounding the longest text.
     """ #v1
     def unpack_strings( obj):
+        """Unpack parameter into a list of strings.  Recursive function."""
         if isinstance( obj, str) or not hasattr(obj, '__iter__'):
             return [ str (obj)]
         else:

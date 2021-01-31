@@ -1,6 +1,6 @@
 import unittest
-from test_resources import *
-from sql_table import *
+from test_resources import TestCases
+from sql_utility    import SQLTable
 
 class TestSQLTable( unittest.TestCase):
     def test_SQLTable_parser( self):
