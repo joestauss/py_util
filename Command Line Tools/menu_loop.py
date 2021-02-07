@@ -20,7 +20,7 @@ Subclasses can load their parameters and then call MenuLoop's init to start.
         """Read user's selection into a local variable, then execute it."""
         print( "Please select one of the following actions.")
         self.selection = cli_selector( list( self.action_options))
-        self.options[ self.selection]()
+        self.action_options[ self.selection]()
 
     @property
     def action_options( self):

@@ -45,7 +45,6 @@ class BaseSequence( collections.abc.MutableSequence):
     def __str__(self):
         return "\n".join( [str(item) for item in self.data])
 
-
     @property
     def _repr_args( self):
         return [ repr( self.data)]
