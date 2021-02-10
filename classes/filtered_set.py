@@ -1,6 +1,6 @@
 import abc
 import collections.abc
-from utility import common_repr
+from py_util.decorators import common_repr
 
 @common_repr
 class FilteredSet( collections.abc.MutableSet, abc.ABC):

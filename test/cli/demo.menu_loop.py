@@ -1,4 +1,4 @@
-from menu_loop import MenuLoop
+from py_util.cli import MenuLoop
 
 if __name__ == "__main__":
     MenuLoop()

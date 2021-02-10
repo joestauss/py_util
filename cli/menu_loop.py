@@ -1,5 +1,4 @@
-from boxed_text   import boxed_text
-from cli_selector import cli_selector
+from py_util.cli import boxed_text, cli_selector
 
 class MenuLoop:
     """MenuLoop is a framework for a basic, repeating CLI menu.

@@ -16,7 +16,7 @@ BaseCollection Functionality Tested
 
 """
 import unittest
-from base_classes import BaseRecord, BaseCollection
+from pyutil.classes.base_classes import BaseRecord, BaseCollection
 
 class Test_BaseClasses( unittest.TestCase):
     def setUp( self):

@@ -4,9 +4,9 @@ Some of the base classes' functionality is tested also, to verify that everythin
 """
 
 import unittest
-from old_mixins import Taggable
-from jsonable_mapping import JSONableMapping
-from base_classes import BaseRecord, BaseCollection
+from pyutil.classes.old_mixins import Taggable
+from pyutil.classes.jsonable_mapping import JSONableMapping
+from pyutil.classes.base_classes import BaseRecord, BaseCollection
 
 class TaggableRecord(Taggable, BaseRecord, JSONableMapping):
     pass

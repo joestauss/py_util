@@ -1,5 +1,5 @@
 import unittest
-from filtered_set import FilteredSet
+from pyutil.classes.filtered_set import FilteredSet
 
 class OddNumsSet( FilteredSet):
     def filter( self, item):

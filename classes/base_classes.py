@@ -1,6 +1,6 @@
 import collections
 import collections.abc
-from utility import common_repr
+from py_util.decorators import common_repr
 
 class BaseRecord( collections.UserDict):
     """A simple concrete record class for testing mixins.""" #v1
