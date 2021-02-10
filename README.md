@@ -21,7 +21,7 @@ This folder contains three base classes (_BaseRecord_, _BaseCollection_, and _Ba
 
 # py_util.decorators
 
-**decorators** contains any function implemented as a decorator.  Currently, only _common\_repr_ is implemented, but there are placeholder files for _function\_logger_, _function\_memoization_, and _function\_timer_
+**decorators** contains any functionality implemented as a decorator.  Currently, only _common\_repr_ is implemented, but there are placeholder files for _function\_logger_, _function\_memoization_, and _function\_timer_
 
 ## py_util.etc
 **etc** contains utilities that do not fit well into any other category.
