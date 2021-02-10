@@ -5,15 +5,31 @@ This repository contains various general-purpose python tools that I use.
 
 # Folders
 
-The utilities have been grouped into folders by utility and by software design.  The folders contain a README that describes each class or function in detail.
+# py_util.classes
 
-* __Collection Classes__ contains mixins that add functionality to a collection class.
-* __Command Line Tools__ can help with implementing a text-based interface.
-* __Decorators__ has decorators for classes and functions.
-* __File Management__ tools for working with the file system, download images.
-* __Other__ some thread managers, an odd parser, and SQL.
+This folder contains three base classes (_BaseRecord_, _BaseCollection_, and _BaseSequence_), as well as the mix-in classes _FilteredSet_ and _JSONableMapping_.
 
+# py_util.cli
 
-# Versioning
+* __boxed\_text__ is a pretty-print function that puts its args in a box.  Any iterables are unpacked and everything is given its own line.
 
-In order to be able to refactor however and whenever I want, I will not be enforcing backwards compatibility on any of these utilities.  The current iteration of each utility will be versioned, as indicated by "#v\_" (where \_ is the version number) right after the docstring.
+* __cli\_selector__ gets a user's input from among a list of options.  It supports two modes of operation:
+ - _single_ - User selects a single choice.  This is the default mode.
+ - _many_ - User can input several choices separated by a comma.
+
+*  __MenuLoop__ is a framework for a basic, repeating CLI menu-loop.
+
+# py_util.decorators
+
+**decorators** contains any function implemented as a decorator.  Currently, only _common\_repr_ is implemented, but there are placeholder files for _function\_logger_, _function\_memoization_, and _function\_timer_
+
+## py_util.etc
+**etc** contains utilities that do not fit well into any other category.
+
+* **sql_utility.py** contains the *SQL\_Table* class.  This class was originally used to facilitate a school project, and is not a serious attempt to implement SQL.
+* **thread_managers.py** contains a regular _ThreadManager_, _PatientThreadManager_ that starts each thread after a 0.1 second delay, and _BatchThreadManager_ that runs threads fixed-size cohorts.
+* This folder also contains files for the unimplemented utilities *dir\_mgr*, *image\_browser*, and *image\_downloader*.
+
+## py_util.test
+
+The **test** folder contains both unit-tests and scripts to demonstrate program behavior.  Unit-tests are titled ("ut.\_.py") and demonstrations are titled ("demo.\_.py").  The structure of the *test* folder mirrors the structure of the rest of the package so, for example, all of the files in *py\_util/cli* are tested in *py\_util/test/cli*.
