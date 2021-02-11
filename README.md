@@ -7,7 +7,11 @@ This repository contains various general-purpose python tools that I use.
 
 # py_util.classes
 
-This folder contains three base classes (_BaseRecord_, _BaseCollection_, and _BaseSequence_), as well as the mix-in classes _FilteredSet_ and _JSONableMapping_.
+* There are four __Base Classes__, styled after _collections.UserDict_ with a few ease-of-use modifications: _BaseCollection_, _BaseMapping_, _BaseSequence_, and _BaseSet_.
+
+* There are two abstract __Mixin Classes__: _FilteredSet_ and _JSONableMapping_.
+
+* There are also two deprecated files ("old.\_.py") and two placeholder files for unimplemented classes: _KeywordCollection_ and _WebUpdatableMapping_.
 
 # py_util.cli
 
@@ -32,4 +36,4 @@ This folder contains three base classes (_BaseRecord_, _BaseCollection_, and _Ba
 
 ## py_util.test
 
-The **test** folder contains both unit-tests and scripts to demonstrate program behavior.  Unit-tests are titled ("ut.\_.py") and demonstrations are titled ("demo.\_.py").  The structure of the *test* folder mirrors the structure of the rest of the package so, for example, all of the files in *py\_util/cli* are tested in *py\_util/test/cli*.
+The **test** folder contains both unit-tests and scripts to demonstrate program behavior.  Folders containing unit-tests are named "ut.\_" and folders containing demonstrations are named "demo.\_".  The structure of the *test* folder mirrors the structure of the rest of the package so, for example, all of the files in *py\_util/cli* are tested in *py\_util/test/cli*.

@@ -6,7 +6,7 @@ def common_repr( cls):
         if hasattr( self, '_repr_args'):
             args_string = ', '.join( self._repr_args)
         if hasattr( self, '_repr_kwargs'):
-            kwargs_string = ', '.join( [f"{k}={v}" for k,v in self._repr_kwargs.items()])
+            kwargs_string = ', '.join( [f"{k}={repr(v)}" for k,v in self._repr_kwargs.items()])
         if args_string and not kwargs_string:
             return f"{type( self).__name__}({args_string})"
         if kwargs_string and not args_string:
