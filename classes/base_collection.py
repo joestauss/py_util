@@ -3,6 +3,21 @@ from py_util.decorators import common_repr
 
 @common_repr
 class BaseCollection( collections.abc.Collection):
+    '''BaseCollection is the parent of all other base collection classes.
+
+    Collection Abstract Methods
+    ---------------------------
+        __contains__
+        __iter__
+        __len__
+
+    Other methods
+    -------------
+        __init__
+        __repr__ (through common_repr; re-implement properties to over-write)
+        __str__
+    '''
+
     def __init__( self, *args, **kwargs):
         if len(args) == 0:
             self.data = set()

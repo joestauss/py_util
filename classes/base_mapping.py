@@ -2,6 +2,24 @@ import collections.abc
 from py_util.classes import BaseCollection
 
 class BaseMapping( collections.abc.MutableMapping, BaseCollection):
+    '''BaseMapping is mostly used for record-type objects.
+
+    MutableMapping Abstract Methods
+    -------------------------------
+        __getitem__, __setitem__, __delitem__, __iter__, __len__
+
+    MutableMapping Mixin Methods
+    ----------------------------
+        from Mapping: __contains__, __eq__, __ne__,
+                      keys, items, values, get
+        also: pop, popitem, clear, update, setdefault
+
+    Other Methods
+    -------------
+        __init__, __str__, __repr__ (from BaseCollection)
+
+    '''
+
     def __init__( self, *args, **kwargs):
         super().__init__( *args, **kwargs)
         if not self.data:
