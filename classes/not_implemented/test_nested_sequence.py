@@ -1,14 +1,14 @@
 import unittest
-from nested_collection import NestedCollection
+from nested_collection import NestedSequence
 
-class TestNestedCollection( unittest.TestCase):
+class TestNestedSequence( unittest.TestCase):
     def setUp( self):
         self.cases = [
         ('''
             No structure.
             No structure here.
             Just a flat group.
-        ''', NestedCollection( ungrouped=[ 'No structure here.', 'No structure.', 'Just a flat group.'])),
+        ''', NestedSequence( ungrouped=[ 'No structure here.', 'No structure.', 'Just a flat group.'])),
         ('''
             Words in Spanish : {
                 Uno
@@ -18,7 +18,7 @@ class TestNestedCollection( unittest.TestCase):
             Words in English : {
                 One; Two ;Three
             }
-        ''', NestedCollection( groups={ 'Words in English' : ['Three', 'One', 'Two' ],
+        ''', NestedSequence( groups={ 'Words in English' : ['Three', 'One', 'Two' ],
                                         'Words in Spanish' : ['Tres', 'Dos' , 'Uno' ],})),
         ('''
             Outer Group : {
@@ -26,7 +26,7 @@ class TestNestedCollection( unittest.TestCase):
                     Thing
                 }
             }
-        ''', NestedCollection( groups={'Outer Group' : ['Thing'], 'Inner Group' : ['Thing']})),
+        ''', NestedSequence( groups={'Outer Group' : ['Thing'], 'Inner Group' : ['Thing']})),
         ('''
             Al Green
             Colors:{
@@ -40,7 +40,7 @@ class TestNestedCollection( unittest.TestCase):
                     Black; Grey; White
                 }
             The Blues
-        ''', NestedCollection( groups={'Colors' : ['Yellow', 'Black', 'Purple', 'Red', 'Grey', 'White'],
+        ''', NestedSequence( subs={'Colors' : ['Yellow', 'Black', 'Purple', 'Red', 'Grey', 'White'],
                                        'Primary Colors' : ['Red', 'Yellow'],
                                        'Secondary Colors' : ['Purple']},
                             ungrouped=['The Blues', 'Al Green']))
@@ -48,15 +48,15 @@ class TestNestedCollection( unittest.TestCase):
 
     def test_parser( self):
         for input, expected_output in self.cases:
-            self.assertEqual( NestedCollection.parse( input), expected_output)
+            self.assertEqual( NestedSequence.parse( input), expected_output)
 
     def test_repr( self):
         for input, expected_output in self.cases:
             # Both versions of cases are tested against eah other's repr to make sure order doesn't matter.
-            self.assertEqual( eval( repr( NestedCollection.parse( input))), expected_output)
-            self.assertEqual( eval( repr( NestedCollection.parse( input))), NestedCollection.parse( input))
+            self.assertEqual( eval( repr( NestedSequence.parse( input))), expected_output)
+            self.assertEqual( eval( repr( NestedSequence.parse( input))), NestedSequence.parse( input))
             self.assertEqual( eval( repr( expected_output)), expected_output)
-            self.assertEqual( eval( repr( expected_output)), NestedCollection.parse( input))
+            self.assertEqual( eval( repr( expected_output)), NestedSequence.parse( input))
 
 if __name__ == '__main__':
     unittest.main()

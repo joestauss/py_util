@@ -1,37 +1,24 @@
+from py_util.classes import BaseSequence
 import pyparsing as pp
 pp.ParserElement.setDefaultWhitespaceChars(' \t')
 
-class NestedCollection:
-    ''' The NestedCollection class was implemented to provide access to the parser.
+class NestedSequence( BaseSequence):
+    ''' The NestedSequence class was implemented to provide access to the parser.
 
-    Dunder Methods
-    --------------
+    Methods
+    -------
         __init__
-        __eq__
-        __repr__
-
-    Other Methods
-    -------------
         parse
     ''' #v1
-    def __init__( self, ungrouped=[], groups={}):
-        self.ungrouped = ungrouped
-        self.groups    = groups
+    def __init__( self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.groups = {}
+        if 'subs' in kwargs:
+            self.groups = kwargs[ 'subs']
 
-    def __eq__( self, other):
-        for g, items in self.groups.items():
-            if g not in other.groups:
-                return False
-            for item in items:
-                if item not in other.groups[g]:
-                    return False
-        return sorted(self.ungrouped) == sorted( other.ungrouped)
-
-    def __repr__( self):
-        return f"NestedCollection(ungrouped={repr(self.ungrouped)}, groups={repr(self.groups)})"
-
-    def parse( input_string):
-        ''' Return a NestedCollection defined by input_string.
+    @classmethod
+    def parse( cls, input_string):
+        ''' Return a NestedSequence defined by input_string.
 
         Grammar
         -------
@@ -75,4 +62,4 @@ class NestedCollection:
                 g_names.append( group[0])
                 groups[ group[0]] = list(filter( lambda item: item not in g_names, group))
         ungrouped = list(filter( lambda item: all(item not in g for g in groups.values() ), map( lambda item: item[0], result['items'].asList())))
-        return NestedCollection(ungrouped=ungrouped, groups=groups)
+        return cls(ungrouped, subs=groups)
