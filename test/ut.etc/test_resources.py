@@ -1,5 +1,4 @@
-from sql_utility import SQLTable
-import collections
+from py_util.etc import SQLTable
 
 class TestCases:
     class TableParser:

@@ -8,13 +8,12 @@ JSONable Functionality tested
     __hash__
 '''
 import unittest
-from pyutil.classes.jsonable_mapping import JSONableMapping
-from pyutil.classes.base_classes import BaseRecord
+from py_util.classes import JSONableMapping, BaseMapping
 
-class JSONRecord( BaseRecord, JSONableMapping):
+class JSONRecord( BaseMapping, JSONableMapping):
     pass
 
-class Test_JSONClasses( unittest.TestCase):
+class Test_JSONableMapping( unittest.TestCase):
     def setUp( self):
         self.dd_1   = {f'key {i}' : f'value {i}' for i in range(5)}
         self.dd_2   = {f'key {i}' : f'alternate value {i}' for i in range(5)}

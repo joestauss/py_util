@@ -3,7 +3,7 @@
 This script validates the performance of the @common_repr decorator.
 It works by testing the __repr__ of decorated classes with different __init__ proiles.
 """
-from common_repr import common_repr
+from py_util.decorators import common_repr
 import unittest
 
 class WrongRepr:
@@ -44,8 +44,8 @@ class ThreeKwargs( WrongRepr):
     @property
     def _repr_kwargs( self):
         if not hasattr( self, 'beta'):
-            return {'alpha' : repr( self.alpha), 'gamma' : repr( self.gamma)}
-        return {'alpha' : repr( self.alpha), 'beta' : repr( self.beta), 'gamma' : repr( self.gamma)}
+            return {'alpha' : self.alpha, 'gamma' : self.gamma}
+        return {'alpha' : self.alpha, 'beta' : self.beta, 'gamma' : self.gamma}
 
 class ComplexInit( TwoArgs, ThreeKwargs):
     def __init__( self, *args, **kwargs):

@@ -12,10 +12,10 @@ class JSONableMapping( collections.abc.Mapping, collections.abc.Hashable, abc.AB
 
     This is an abstract class and should work with any implementation of Mapping.
     """ #v1
-    @abc.abstractmethod
-    def __init__( self, data_dictionary, *args, **kwargs):
-        """An __init__ method must be callable in this format for cls.from_json."""
-        raise NotImplementedError
+    # @abc.abstractmethod
+    # def __init__( self, data_dictionary, *args, **kwargs):
+    #     """An __init__ method must be callable in this format for cls.from_json."""
+    #     super().__init__( data_dictionary, *args, **kwargs)
 
     @property
     def json( self):

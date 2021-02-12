@@ -4,17 +4,15 @@ Some of the base classes' functionality is tested also, to verify that everythin
 """
 
 import unittest
-from pyutil.classes.old_mixins import Taggable
-from pyutil.classes.jsonable_mapping import JSONableMapping
-from pyutil.classes.base_classes import BaseRecord, BaseCollection
+from py_util.classes import Taggable, JSONableMapping, BaseMapping, BaseSet
 
-class TaggableRecord(Taggable, BaseRecord, JSONableMapping):
+class TaggableRecord(Taggable, BaseMapping, JSONableMapping):
     pass
 
-class TaggableCollection( Taggable, BaseCollection):
+class TaggableCollection( Taggable, BaseSet):
     pass
 
-class Test_TaggableClasses( unittest.TestCase):
+class Test_TaggableMixin( unittest.TestCase):
     def setUp( self):
         dd_1   = {f'key {i}' : f'value {i}' for i in range(5)}
         tags_1 = { f'tag {i}' for i in range(3)}

@@ -1,5 +1,6 @@
 #     Collections
 from .base_collection import BaseCollection
+from .taggable_mixin  import Taggable
 
 #     Mappings
 from .base_mapping     import BaseMapping

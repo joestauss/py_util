@@ -1,8 +1,8 @@
 import unittest
 from test_resources import TestCases
-from py_util.other  import SQLTable
+from py_util.etc    import SQLTable
 
-class TestSQLTable( unittest.TestCase):
+class Test_SQLTable( unittest.TestCase):
     def test_SQLTable_parser( self):
         for input, expected_output in TestCases.TableParser.validated_correct:
             self.assertEqual( SQLTable.parse( input), expected_output)

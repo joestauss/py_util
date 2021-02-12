@@ -1,11 +1,11 @@
 import unittest
-from pyutil.classes.filtered_set import FilteredSet
+from py_util.classes import FilteredSet, BaseSet
 
-class OddNumsSet( FilteredSet):
+class OddNumsSet( FilteredSet, BaseSet):
     def filter( self, item):
         return item % 2 == 1
 
-class TestFilteredSet( unittest.TestCase):
+class Test_FilteredSet( unittest.TestCase):
     def test_oddnums_set( self):
         self.assertTrue( OddNumsSet( range(10)) == {1, 3, 5, 7, 9})
 
