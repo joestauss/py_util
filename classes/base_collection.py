@@ -21,7 +21,7 @@ class BaseCollection( collections.abc.Collection):
     def __init__( self, *args, **kwargs):
         if len(args) == 0:
             self.data = set()
-        elif len(args) == 1:
+        elif len(args) >= 1:
             self.data = args[0]
         if 'name' in kwargs:
             self.name = kwargs['name']

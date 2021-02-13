@@ -16,16 +16,14 @@ class BaseSequence( collections.abc.MutableSequence, BaseCollection):
     Other Methods
     -------------
         __init__, __str__, __repr__ (from BaseCollection)
-
     '''
-
 
     def __init__(self, *args, **kwargs):
         super().__init__( *args, **kwargs)
         try:
             self.data = list( self.data)
         except:
-            raise ValueError( "BaseSequence must be initialized with something that can be interpreted as an list.")
+            raise ValueError( f"BaseSequence cannot be initialized.")
 
     #   Start of BaseSequence methods
     #   __len__ is implemented in BaseCollection.

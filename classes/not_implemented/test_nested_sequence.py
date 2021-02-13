@@ -40,7 +40,7 @@ class TestNestedSequence( unittest.TestCase):
                     Black; Grey; White
                 }
             The Blues
-        ''', NestedSequence( subs={'Colors' : ['Yellow', 'Black', 'Purple', 'Red', 'Grey', 'White'],
+        ''', NestedSequence( groups={'Colors' : ['Yellow', 'Black', 'Purple', 'Red', 'Grey', 'White'],
                                        'Primary Colors' : ['Red', 'Yellow'],
                                        'Secondary Colors' : ['Purple']},
                             ungrouped=['The Blues', 'Al Green']))
