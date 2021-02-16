@@ -1,12 +1,12 @@
 import unittest
-from py_util.classes import TaggableCollection, BaseSet, BaseSequence
+from py_util.collections import TaggableCollection, BaseSet, BaseSequence
 from collections     import namedtuple
 
 class TaggableSet( TaggableCollection, BaseSet):
     @property
     def _repr_kwargs( self):
         return { 'tags': self.tags}
-        
+
     def __eq__( self, other):
         return self.data == other.data and self.tags == other.tags
 

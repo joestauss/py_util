@@ -3,7 +3,7 @@
 This class was originally used to facilitate a school project, and is not a
 serious attempt to implement SQL.
 """
-from py_util.classes import BaseSequence
+from py_util.collections import BaseSequence
 import pyparsing as pp
 
 class SQLTable( BaseSequence):

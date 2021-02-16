@@ -5,7 +5,7 @@ This repository contains various general-purpose python tools that I use.
 
 # Folders
 
-# py_util.classes
+# py_util.collections
 
 * There are four __Base Classes__, styled after _collections.UserDict_ with a few ease-of-use modifications: _BaseCollection_, _BaseMapping_, _BaseSequence_, and _BaseSet_.
 

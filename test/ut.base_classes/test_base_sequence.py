@@ -1,5 +1,5 @@
 import unittest
-from py_util.classes import BaseSequence
+from py_util.collections import BaseSequence
 
 class Test_BaseSequence( unittest.TestCase):
     ''' collections.abc.MutableSequence

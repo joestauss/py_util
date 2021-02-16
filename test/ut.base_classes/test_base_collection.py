@@ -1,5 +1,5 @@
 import unittest
-from py_util.classes import BaseCollection
+from py_util.collections import BaseCollection
 from collections import namedtuple
 
 class Test_BaseCollection( unittest.TestCase):

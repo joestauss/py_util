@@ -1,5 +1,5 @@
 import collections.abc
-from py_util.classes import BaseCollection
+from py_util.collections import BaseCollection
 
 class BaseSet( collections.abc.MutableSet, BaseCollection):
     '''BaseSet is the base-class for unordered collections.

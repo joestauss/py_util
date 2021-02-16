@@ -64,7 +64,7 @@ def read_taggable_collection( input_string):
     #
     # nested_sequence.py
     #
-    # from py_util.classes import BaseSequence, TaggableCollection
+    # from py_util.collections import BaseSequence, TaggableCollection
     # import pyparsing as pp
     #
     # pp.ParserElement.setDefaultWhitespaceChars(' \t')

@@ -8,7 +8,7 @@ JSONable Functionality tested
     __hash__
 '''
 import unittest
-from py_util.classes import JSONableMapping, BaseMapping
+from py_util.collections import JSONableMapping, BaseMapping
 
 class JSONRecord( BaseMapping, JSONableMapping):
     pass

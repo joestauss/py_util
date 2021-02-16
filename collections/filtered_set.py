@@ -1,5 +1,5 @@
 import abc
-#from py_util.classes import BaseSet
+#from py_util.collections import BaseSet
 import collections.abc
 
 class FilteredSet( collections.abc.MutableSet, abc.ABC):

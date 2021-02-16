@@ -1,5 +1,5 @@
 import collections.abc
-from py_util.classes import BaseCollection
+from py_util.collections import BaseCollection
 
 class BaseSequence( collections.abc.MutableSequence, BaseCollection):
     '''BaseSequence is the base-class for ordered collections.

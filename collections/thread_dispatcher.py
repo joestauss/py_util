@@ -1,4 +1,4 @@
-from py_util.classes import TaggableCollection
+from py_util.collections import TaggableCollection
 
 class ThreadDispatcher( TaggableCollection):
     """This mixin class enables thead-based actions, such as updating records.  Actions can be flagged to be batched.

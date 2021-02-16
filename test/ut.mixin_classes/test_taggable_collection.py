@@ -4,7 +4,7 @@ Some of the base class' functionality is tested also, to verify that everything 
 """
 
 import unittest
-from py_util.classes import TaggableCollection, BaseSequence
+from py_util.collections import TaggableCollection, BaseSequence
 
 class TaggableRange( TaggableCollection, BaseSequence):
     def __init__( self, *args, **kwargs):
