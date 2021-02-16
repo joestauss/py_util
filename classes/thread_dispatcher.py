@@ -1,11 +1,9 @@
 from py_util.classes import TaggableCollection
-import collections
-import collections.abc
 
 class ThreadDispatcher( TaggableCollection):
     """This mixin class enables thead-based actions, such as updating records.  Actions can be flagged to be batched.
 
-    To make an ActionThreads perform an action:
+    To make a ThreadDispatcher perform an action:
     1)  Choose a tag for that action (EXAMPLE_ACTION_TAG below).
     2)  Write a method to perform the action ( example_method( seld) below).
     3)  Add the following key-value pair:

@@ -1,4 +1,5 @@
 import collections.abc
+from py_util.parsers import read_taggable_collection
 
 class TaggableCollection( collections.abc.Collection):
     """A taggable class inherits the tags attribute and the following methods.
@@ -25,9 +26,9 @@ class TaggableCollection( collections.abc.Collection):
     def tag( self, item, tag_string):
         """Add the parameter to this TaggableRecord's "tags" set."""
         if tag_string in self.tags:
-            self.tags[ tag_string].add( item)
+            self.tags[ tag_string].append( item)
         else:
-            self.tags[ tag_string] = { item}
+            self.tags[ tag_string] = [ item]
 
     @property
     def all_tags( self):
@@ -38,3 +39,8 @@ class TaggableCollection( collections.abc.Collection):
         """Apply a tag to each of the records."""
         for record in self:
             self.tag( record, tag_string)
+
+    @classmethod
+    def parse( cls, input_string):
+        parse_result = read_taggable_collection( input_string)
+        return cls( parse_result.data, tags=parse_result.tags)

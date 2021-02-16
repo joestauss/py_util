@@ -36,4 +36,4 @@ This repository contains various general-purpose python tools that I use.
 
 ## py_util.test
 
-The **test** folder contains both unit-tests and scripts to demonstrate program behavior.  Folders containing unit-tests are named "ut.\_" and folders containing demonstrations are named "demo.\_".  The structure of the *test* folder mirrors the structure of the rest of the package so, for example, all of the files in *py\_util/cli* are tested in *py\_util/test/cli*.
+The **test** folder contains unit-tests, demonstration scripts, and a README for the test suite.

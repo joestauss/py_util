@@ -1,7 +1,7 @@
 #     Collections
-from .base_collection       import BaseCollection
-from .taggable_collection   import TaggableCollection
-from .actionable_collection import ActionableCollection
+from .base_collection     import BaseCollection
+from .taggable_collection import TaggableCollection
+from .thread_dispatcher   import ThreadDispatcher
 
 #     Mappings
 from .base_mapping     import BaseMapping
@@ -12,4 +12,4 @@ from .base_set     import BaseSet
 from .filtered_set import FilteredSet
 
 #     Sequences
-from .base_sequence import BaseSequence
+from .base_sequence   import BaseSequence
