@@ -36,19 +36,14 @@ class Test_TaggableCollection( unittest.TestCase):
         temp.tag( 1, 'A')
         temp.tag( 2, 'A')
         temp.tag( 3, 'A')
-        self.assertEqual( temp.tags, { 'A' : {1, 2, 3}})
-        # also testing tag_all and discarding
-        temp2 = TaggableRange( 4)
-        temp2.tag_all( 'A')
-        temp2.tags['A'].discard( 0)
-        self.assertEqual( temp.tags, temp2.tags)
+        self.assertEqual( temp.tags, { 'A' : [1, 2, 3]})
 
     def test_TaggableSequence_tagall( self):
         temp = TaggableRange( 15)
         temp.tag_all( 'Number')
-        self.assertEqual( temp.tags, { 'Number' : set( range( 15))})
+        self.assertEqual( temp.tags, { 'Number' : list( range( 15))})
         # also testing tags in constructor
-        temp2 = TaggableRange( 30, tags={ 'Number' : {i for i in range(15)}})
+        temp2 = TaggableRange( 30, tags={ 'Number' : list({i for i in range(15)})})
         self.assertEqual( temp.tags, temp2.tags)
 
     def test_TaggableSequence_all_tags( self):
@@ -59,9 +54,9 @@ class Test_TaggableCollection( unittest.TestCase):
         temp.tag( 2, 'A')
         temp.tag( 3, 'A')
         self.assertEqual( temp.all_tags, { 'A', 'B', 'C'})
-        self.assertEqual( temp.tags, { 'A' : {1, 2, 3}, 'B' : {1}, 'C' : {1}})
+        self.assertEqual( temp.tags, { 'A' : [1, 2, 3], 'B' : [1], 'C' : [1]})
         # also testing tags in the constructor
-        temp2 = TaggableRange( 30, tags={ 'A' : {1, 2, 3}, 'B' : {1}, 'C' : {1}})
+        temp2 = TaggableRange( 30, tags={'A' : [1, 2, 3], 'B' : [1], 'C' : [1]})
         self.assertEqual( temp.tags, temp2.tags)
 
 if __name__ == "__main__":

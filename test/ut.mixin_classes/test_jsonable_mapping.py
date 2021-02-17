@@ -40,10 +40,10 @@ class Test_JSONableMapping( unittest.TestCase):
             self.assertEqual( JSONRecord.from_json( json_record.json), json_record)
 
     def test_JSONRecord_hash( self):
-        for json_record in self.json_records:
-            initial_set = { json_record}
-            expanded_set = initial_set | { json_record}
-            self.assertEqual( len( initial_set), len( expanded_set))
+        record_A1 = JSONRecord( {'A' : 'aaa'})
+        record_A2 = JSONRecord( {'A' : 'aaa'})
+        self.assertEqual( hash(record_A1), hash(record_A2))
+        self.assertEqual( len( { record_A1, record_A2}), 1) 
 
 if __name__ == "__main__":
     unittest.main()
