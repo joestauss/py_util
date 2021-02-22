@@ -1,6 +1,6 @@
 """ The message_sandwich decorator prints a message before and after a function
-call: not super useful, but I'm still figuring out the best way to implement a
-decorator.
+call: not super useful, but a good way for me to test the readability of
+different decorator implementations.
 """
 import functools
 
