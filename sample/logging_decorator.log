@@ -1,15 +1,15 @@
-Wed Feb 24 19:00:03 2021:wait_a_bit( 0.1380028883869021):::I waited for 0.1380028883869021 seconds.
-Wed Feb 24 19:00:03 2021:wait_a_bit( 0.1380028883869021):::0.15444397926330566 seconds
-Wed Feb 24 19:00:03 2021:zzz_different_function( ):::7
-Wed Feb 24 19:00:04 2021:wait_a_bit( 0.6726447419117451):::I waited for 0.6726447419117451 seconds.
-Wed Feb 24 19:00:04 2021:wait_a_bit( 0.6726447419117451):::0.6881232261657715 seconds
-Wed Feb 24 19:00:04 2021:zzz_different_function( ):::7
-Wed Feb 24 19:00:04 2021:wait_a_bit( 0.48176160409431457):::I waited for 0.48176160409431457 seconds.
-Wed Feb 24 19:00:04 2021:wait_a_bit( 0.48176160409431457):::0.4868466854095459 seconds
-Wed Feb 24 19:00:04 2021:zzz_different_function( ):::7
-Wed Feb 24 19:00:05 2021:wait_a_bit( 0.9043811590059465):::I waited for 0.9043811590059465 seconds.
-Wed Feb 24 19:00:05 2021:wait_a_bit( 0.9043811590059465):::0.9051604270935059 seconds
-Wed Feb 24 19:00:05 2021:zzz_different_function( ):::7
-Wed Feb 24 19:00:06 2021:wait_a_bit( 0.9891870535083852):::I waited for 0.9891870535083852 seconds.
-Wed Feb 24 19:00:06 2021:wait_a_bit( 0.9891870535083852):::1.0030109882354736 seconds
-Wed Feb 24 19:00:06 2021:zzz_different_function( ):::7
+2021-02-26 19:11:57,977 :: INFO :: wait_a_bit( 0.911448319158851) = I waited for 0.911448319158851 seconds.
+2021-02-26 19:11:57,977 :: INFO :: wait_a_bit( 0.911448319158851) ran in 0.921445369720459 seconds.
+2021-02-26 19:11:57,977 :: INFO :: zzz_different_function( ) = 7
+2021-02-26 19:11:58,450 :: INFO :: wait_a_bit( 0.4683201151053207) = I waited for 0.4683201151053207 seconds.
+2021-02-26 19:11:58,450 :: INFO :: wait_a_bit( 0.4683201151053207) ran in 0.4730350971221924 seconds.
+2021-02-26 19:11:58,450 :: INFO :: zzz_different_function( ) = 7
+2021-02-26 19:11:58,682 :: INFO :: wait_a_bit( 0.221575303942677) = I waited for 0.221575303942677 seconds.
+2021-02-26 19:11:58,682 :: INFO :: wait_a_bit( 0.221575303942677) ran in 0.23183727264404297 seconds.
+2021-02-26 19:11:58,682 :: INFO :: zzz_different_function( ) = 7
+2021-02-26 19:11:59,617 :: INFO :: wait_a_bit( 0.9275768895948993) = I waited for 0.9275768895948993 seconds.
+2021-02-26 19:11:59,617 :: INFO :: wait_a_bit( 0.9275768895948993) ran in 0.9352371692657471 seconds.
+2021-02-26 19:11:59,617 :: INFO :: zzz_different_function( ) = 7
+2021-02-26 19:11:59,717 :: INFO :: wait_a_bit( 0.09132638776581392) = I waited for 0.09132638776581392 seconds.
+2021-02-26 19:11:59,717 :: INFO :: wait_a_bit( 0.09132638776581392) ran in 0.09982800483703613 seconds.
+2021-02-26 19:11:59,717 :: INFO :: zzz_different_function( ) = 7

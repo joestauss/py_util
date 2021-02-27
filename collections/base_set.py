@@ -27,7 +27,8 @@ class BaseSet( collections.abc.MutableSet, BaseCollection):
         for item in temp_data:
             self.add( item)
 
-    #   Start of MutableSet methods (some are already added by BaseCollection)
+    #   Start of MutableSet methods
+    #       (__len__, __contains__, and __iter__ are added by BaseCollection)
     #
     def add(self, item):
         self.data.add(item)

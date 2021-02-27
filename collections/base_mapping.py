@@ -28,7 +28,7 @@ class BaseMapping( collections.abc.MutableMapping, BaseCollection):
             raise ValueError( "A mapping can only be inititalized with a dictionary.")
 
     #   Start of MutableMapping methods
-    #   __init__ and __len__ are implmented by BaseCollection
+    #   __iter__ and __len__ are implmented by BaseCollection
     #
     def __getitem__( self, key):
         return self.data[ key]

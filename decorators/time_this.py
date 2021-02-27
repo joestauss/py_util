@@ -10,8 +10,7 @@ class time_this (LoggingDecorator):
             result  = function( *args, **kwargs)
             end     = time.time()
             elapsed = end - start
-            now     = time.ctime( time.time())
-            report  = f"{now}:{self.function_call_string( function, args, kwargs)}:::{elapsed} seconds"
+            report  = f"{self.function_call_string( function, args, kwargs)} ran in {elapsed} seconds."
             self.logger.info( report)
             return result
         return decorated

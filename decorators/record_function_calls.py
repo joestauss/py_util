@@ -11,8 +11,7 @@ class record_function_calls( LoggingDecorator):
         @functools.wraps( function)
         def decorated( *args, **kwargs):
             result  = function( *args, **kwargs)
-            now     = time.ctime( time.time())
-            report  = f"{now}:{self.function_call_string( function, args, kwargs)}:::{str(result)}"
+            report  = f"{self.function_call_string( function, args, kwargs)} = {str(result)}"
             self.logger.info( report)
             return result
         return decorated
