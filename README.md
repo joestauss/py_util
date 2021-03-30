@@ -1,8 +1,6 @@
 # py-util
 
-This repository contains various general-purpose python tools that I use.  This repo will work as a package as long as it's in your Python path.
-
-
+This repository contains various general-purpose python tools that I use.  
 
 # py_util.cli
 
