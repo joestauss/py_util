@@ -16,15 +16,17 @@ def extract_minute_amount( s):
         return None
 
 def extract_film_identity( s):
-    ''' extract_film_info is the swiss army knife of identifing films.
+    '''
+    extract_film_info is a string interpreter; if you want the swiss army knife
+    of film identification, check out resolve_film_identity.
 
     Input
     -----
     s: str
-        A single film to be identified.  Currently supported formats:
+        Currently supported formats:
         - Title (Year)
         - Title (without a year)
-        - IMDB film ID (can be anywhere, meaning this enables...)
+        - IMDB film ID (can be anywhere in the string, which enables...)
         - a URL that contains an IMDB film ID
 
     Returns
