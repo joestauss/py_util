@@ -14,7 +14,6 @@ class ReadOnlyJSONDict( collections.abc.Mapping):
         __init__
         as_json (property)
     '''
-
     def __init__(self, path):
         self.__path = path
 
@@ -33,4 +32,18 @@ class ReadOnlyJSONDict( collections.abc.Mapping):
     @property
     def as_json( self):
         with open( self.__path) as fh:
-            return json.dumps( json.load( fh), indent=4 )
+            return json.dumps( json.load( fh), indent=6 )
+
+class JSONDict( collections.abc.MutableMapping, ReadOnlyJSONDict):
+    #__setitem__, __delitem__,
+    def __set__( self, key, value):
+        with open( self.__path) as fh:
+            data = json.load( fh)
+        data[ key] = value
+        json.dump( data, self.__path, indent=6)
+
+    def __delitem__( self, key):
+        with open( self.__path) as fh:
+            data = json.load( fh)
+        del data[ key]
+        json.dump( data, self.__path, indent=6)
