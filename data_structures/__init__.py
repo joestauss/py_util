@@ -1,1 +1,1 @@
-from .json_dict import ReadOnlyJSONDict
+from .json_dict import JSONDict, ReadOnlyJSONDict
