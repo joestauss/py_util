@@ -52,7 +52,6 @@ class ComplexInit( TwoArgs, ThreeKwargs):
         super().__init__(*args, **kwargs)
 
 class Test_CommonRepr( unittest.TestCase):
-
     def test_empty_call( self):
         object = EmptyInit()
         self.assertEqual( object, eval( repr( object)))

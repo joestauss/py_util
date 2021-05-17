@@ -3,13 +3,14 @@ import json
 import pathlib
 
 class CommonMethodsMixin:
+    def new_file( self, path):
+        raise NotImplementedError( "JSONDict classes need to implement this.")
+
     def __init__(self, path):
         if not isinstance( path,  pathlib.Path):
             raise ValueError( "This class must be initialized with a pathlib.Path object.")
         elif not path.exists():
-            with open( path, 'w') as fh:
-                fh.write( "{}")
-            print( f'I just created {path.name}!')
+            self.new_file( path)
         self.path = path
 
     @property
@@ -30,9 +31,14 @@ class CommonMethodsMixin:
             return len( json.load( fh))
 
 class ReadOnlyJSONDict( CommonMethodsMixin, collections.abc.Mapping):
-    pass
+    def new_file( self, path):
+        raise TypeError( f"{type(self).__name__} cannot create a new file.")
 
 class JSONDict( CommonMethodsMixin, collections.abc.MutableMapping):
+    def new_file( self, path):
+        with open( path, 'w') as fh:
+            fh.write( "{}")
+
     def __setitem__( self, key, value):
         with open( self.path, 'r') as fh:
             data = json.load( fh)

@@ -3,5 +3,3 @@ __pycache__
 # Not ready yet
 etc/download_image.py
 TO DO.md
-collections/persistent_json_set.py
-test/ut.special_classes/
