@@ -1,4 +1,4 @@
-def spaced_strings( rows, as_table = False):
+def simple_columns( rows, as_table = False):
     num_rows = len( rows[0]) # It is assumed that all are the same length.
 
     longest = [ max( [ len( str( row[i])) for row in rows]) for i in range(num_rows) ]

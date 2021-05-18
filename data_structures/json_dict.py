@@ -2,12 +2,12 @@ import collections.abc
 import json
 import pathlib
 
-class CommonMethodsMixin:
+class CommonMethodsMixin( collections.abc.Hashable):
     def new_file( self, path):
         raise NotImplementedError( "JSONDict classes need to implement this.")
 
     def __init__(self, path):
-        if not isinstance( path,  pathlib.Path):
+        if not isinstance( path,  pathlib.PurePath):
             raise ValueError( "This class must be initialized with a pathlib.Path object.")
         elif not path.exists():
             self.new_file( path)
@@ -29,6 +29,12 @@ class CommonMethodsMixin:
     def __len__( self):
         with open( self.path) as fh:
             return len( json.load( fh))
+
+    def __eq__( self, other):
+        return isinstance( other, type(self)) and self.path == other.path
+
+    def __hash__( self):
+        return hash( str(self.path))
 
 class ReadOnlyJSONDict( CommonMethodsMixin, collections.abc.Mapping):
     def new_file( self, path):

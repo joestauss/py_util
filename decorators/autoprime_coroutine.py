@@ -1,4 +1,4 @@
-def autoprime_coroutine( coroutine):
+def autoprime( coroutine):
     tmp = coroutine()
-    tmp.send()
+    tmp.send( None)
     return tmp

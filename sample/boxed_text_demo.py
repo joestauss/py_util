@@ -1,4 +1,4 @@
-from py_util.cli import boxed_text
+from py_util.text import boxed_text
 
 if __name__ == '__main__':
     print( boxed_text(  'This is a single parameter function call.'))
