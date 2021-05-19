@@ -1,5 +1,5 @@
 import collections.abc
-from py_util.collections import BaseCollection
+from py_util.data_structures import BaseCollection
 
 class BaseMapping( collections.abc.MutableMapping, BaseCollection):
     '''BaseMapping is mostly used for record-type objects.

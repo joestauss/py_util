@@ -42,7 +42,6 @@ class Test_RO_JSONDict( unittest.TestCase):
 
     def test_fruits( self):
         test_file = _rsrc_dir.joinpath("fruits.json")
-        print( test_file)
         self.assertTrue( test_file.exists())
         fruits = ReadOnlyJSONDict( test_file)
         self.assertEqual( fruits[ 'banana']    ,  'yellow')
@@ -55,6 +54,5 @@ class Test_RO_JSONDict( unittest.TestCase):
         test_file = self.__base_dir.joinpath( filename)
         self.assertTrue( filename not in self.json_filenames)
         empty_dict = ReadOnlyJSONDict( test_file)
-        print( len(empty_dict))
         self.assertTrue( filename in self.json_filenames)
         os.remove( test_file)

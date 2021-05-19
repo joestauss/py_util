@@ -1,5 +1,5 @@
 import unittest
-from py_util.collections import BaseSet
+from py_util.data_structures import BaseSet
 
 class Test_BaseSet( unittest.TestCase):
     ''' collections.abc.MutableSet

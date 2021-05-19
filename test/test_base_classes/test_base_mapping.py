@@ -1,5 +1,5 @@
 import unittest
-from py_util.collections import BaseMapping
+from py_util.data_structures import BaseMapping
 
 class Test_BaseMapping( unittest.TestCase):
     ''' collections.abc.MutableMapping
