@@ -12,7 +12,9 @@ def boxed_text( *args, BUFFER_SPACE=5 ):
     """ #v1
     def unpack_strings( obj):
         """Unpack parameter into a list of strings.  Recursive function."""
-        if isinstance( obj, str) or not hasattr(obj, '__iter__'):
+        if isinstance( obj, str):
+            return obj.split( "\n")
+        elif not hasattr(obj, '__iter__'):
             return [ str (obj)]
         else:
             lines = []
