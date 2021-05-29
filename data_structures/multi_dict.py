@@ -36,6 +36,9 @@ class MultiDict( collections.abc.MutableMapping):
             temp.update( d)
         return iter( temp)
 
+    def __eq__( self, other):
+        return self.default == other.default and self.special_keys == other.special_keys
+
 if __name__=="__main__":
     loud_vowels = {
         'A' : "AAAAAA",
