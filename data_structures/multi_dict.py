@@ -19,7 +19,7 @@ class MultiDict( collections.abc.MutableMapping):
         return self.select_dict( key).__getitem__( key)
 
     def __setitem__( self, key, value):
-        return self.select_dict( key).__setitem__( key)
+        return self.select_dict( key).__setitem__( key, value)
 
     def __delitem__( self, item):
         return self.select_dict( key).__delitem__( key)
