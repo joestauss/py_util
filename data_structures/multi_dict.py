@@ -7,7 +7,7 @@ class MultiDict( collections.abc.MutableMapping):
         self.default      = default
 
     def __str__( self):
-        return str( special_keys)
+        return str( self.special_keys)
 
     def select_dict( self, key):
         for key_list, sub_dict in self.special_keys.items():
